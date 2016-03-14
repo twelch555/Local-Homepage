@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <?php
 require('config.php');
-require('functions.php');
 date_default_timezone_set('UTC');
+/*require('functions.php');
 
 if(isset($_GET['sql'])) {
 	switch_mysql($_GET['sql'], $osx_password);
-}
+}*/
 ?>
 
 <html>
@@ -25,17 +25,6 @@ if(isset($_GET['sql'])) {
 		    <nav>
 		        <ul>
 				<?php
-				if($mysql_status == 'yes') {
-					$status = (check_mysql($mysql_host, $mysql_user, $mysql_password)) ? 'start' : 'stop';
-					echo '<li>';
-					printf('<img src="/img/mysql-%1$s.png" /> MySQL', $status);
-					if(strlen($osx_password) > 0) {
-						if($status == 'stop') $button = 'start';
-						if($status == 'start') $button = 'stop';
-						printf(' (<a href="index.php?sql=%1$s" title="%1$s MySQL">%1$s</a>)', $button);
-					}
-					echo '</li>';
-				}
 
 	            foreach($devtools as $tool) {
 	            	printf('<li><a href="%1$s">%2$s</a></li>', $tool['url'], $tool['name']);
@@ -112,7 +101,7 @@ if(isset($_GET['sql'])) {
     </div>
 
     <footer class="cf footer">
-		<p>&copy; <?php echo date('Y'); ?> AJdG Solutions</p>
+		<p>&copy; <?php echo date('Y'); ?> TRUOL Innovations</p>
     </footer>
 
 </body>
